@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-random = Random.new
+seed = ARGV.length == 1 && ARGV[0].to_i != 0 ? ARGV[0].to_i : Random.new_seed
+random = Random.new(seed)
 
 step = 15
 current_letter = 1
@@ -58,3 +59,4 @@ numbers = []
 end
 
 puts template % numbers
+
