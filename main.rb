@@ -58,5 +58,6 @@ numbers = []
     end
 end
 
+puts "Generated from seed: #{seed}\n\n"
 puts template % numbers
 
