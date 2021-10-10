@@ -1,1 +1,1 @@
-# bingo-loto-number-generator
+# loto-number-generator
