@@ -23,15 +23,9 @@ end
 numbers.sort!
 
 while extra_numbers.length < 2
-  got_number = false
+  random_number = random.rand(1...13)
 
-  while not got_number
-    random_number = random.rand(1...11)
-
-    unless extra_numbers.include? random_number
-      got_number = true
-    end
-
+  unless extra_numbers.include? random_number
     extra_numbers << random_number
   end
 end
@@ -48,4 +42,3 @@ template = '+----+----+----+----+----+
 '
 
 puts template % numbers
-
