@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 
+fields = 10
 seed = ARGV.length == 1 && ARGV[0].to_i != 0 ? ARGV[0].to_i : Random.new_seed
 random = Random.new(seed)
 
 numbers = [];
 
-while numbers.length < 10
+while numbers.length < fields
   got_number = false
-        
+
   while not got_number
     random_number = random.rand(1...65)
 
@@ -21,9 +22,8 @@ end
 
 numbers.sort!
 
-template = '+----+----+----+----+----+----+----+----+----+----+
-| %2d | %2d | %2d | %2d | %2d | %2d | %2d | %2d | %2d | %2d |
-+----+----+----+----+----+----+----+----+----+----+
-'
+template = '+----' * fields << "+\n"
+template << '| %2d ' * fields << "|\n"
+template << '+----' * fields << "+\n"
 
 puts template % numbers
