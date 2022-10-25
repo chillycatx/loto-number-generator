@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 fields = ARGV.length > 0 && ARGV[0].to_i != 0 ? ARGV[0].to_i : 10
+fields = fields > 10 ? 10 : fields
+fields = fields < 1 ? 1 : fields
+
 seed = ARGV.length > 1 && ARGV[1].to_i != 0 ? ARGV[1].to_i : Random.new_seed
 random = Random.new(seed)
 
